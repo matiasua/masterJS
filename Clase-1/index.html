@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 1</title>
+</head>
+<body>
+    <script>
+        console.log('Hola Clase JS');
+        var test = true;
+        console.log(typeof test);
+        
+        var jsClassUsers = 'Students';
+        var jsClassQty = 49;
+        var jsClassDuration = '150 min';
+        var jsClassTimeStart = '19:00 hrs';
+        var jsClassTimeEnd = '21:30 hrs';
+        var jsClassDay = 'Lunes y Miercoles';
+
+        var jsClass = { tipoDeUsuarios: jsClassUsers, qty: jsClassQty, duration: jsClassDuration, start: jsClassTimeStart, end: jsClassTimeEnd, day: jsClassDay}
+        
+        // esta variable es una cadena de texto al igual que jsClass['qty']
+        var keyword = 'qty';
+        // notaciones para console.log
+        console.log(jsClass);
+        console.log(jsClass.tipoDeUsuarios);
+        console.log(jsClass['qty']);
+        console.log(jsClass[keyword]);
+        var keyword = 'tipoDeUsuarios';
+        console.log(jsClass[keyword]);
+
+
+        var studentsName = ['Matias', 'Vicente', 'Karen', 'Felipe'];
+        console.log(studentsName[0]);
+        var jsClassQty = studentsName.length;
+        var jsClass2 = { tipoDeUsuarios: jsClassUsers, qty: jsClassQty, list: ['Matias', 'Vicente', 'Karen', 'Felipe']};
+        console.log(jsClass2);
+    </script>
+</body>
+</html>
