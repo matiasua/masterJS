@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p id="title"> ...Esperando Título </p>
+  <script>
+    // const title = document.getElementById('title');
+    // fetch('https://jsonplaceholder.typicode.com/todos')
+    // .then(function(response) {
+    //   return response.json();
+    // })
+    // .then(function(todos) {
+    //   console.log(todos);
+    //   let titles = [];
+    //   for(let i= 0; i < todos.length; i++) {
+    //     titles.push(todos[i].title);
+    //   }
+    //   title.innerText = titles.join(' - ');
+    // })
+    // .catch(function(error){
+    //   console.log(error);
+    //   title.innerText = error.message;
+    // })
+
+    // console.log("jjfhj");
+
+    // const text = "Hola";
+    // const splitted = text.split('');
+    // const reversed = splitted.reverse();
+    // const textReverse = reversed.join('');
+    // console.log(textReverse);
+
+    // console.log(text.split('').reverse().join(''));
+
+    // function a(despedirseFn) {
+    //   console.log('Hola');
+    //   despedirseFn();
+    // }
+    // function b() {
+    //   console.log('Chao');
+    // }
+
+    // a(b);
+
+
+    // const pr = new Promise(function(resolve, reject) {
+    //   resolve('Hola');
+    //   reject('Chao');
+    // });
+
+    // const pr2
+
+    // pr.then(function(respuesta) {
+    //   console.log('respuesta', respuesta);
+    // }).catch(function(error) {
+    //   console.log('error', error);
+    // });
+
+    function saludar() {
+      console.log('Saludando !');
+    }
+
+    saludar();
+
+    let hola;
+
+    // const hola = new Promise(function(resolve, reject) {
+    //   setTimeout(function() {
+    //     console.log('Hola');
+    //     hola = 'hola';
+    //     resolve();
+    //   }, 3000);
+    // });
+
+    const saludoConst = "hi";
+
+    function holaFn(saludo, temp) {
+        return new Promise(function(resolve, reject) {
+        setTimeout(function() {
+          console.log(saludo);
+          resolve();
+        }, temp);
+      });
+    }
+
+    holaFn('Hi', 3000).then(function() {
+      console.log('chao');
+    });
+
+    holaFn('Hello', 1000).then(function() {
+      console.log('chao');
+    });
+
+    holaFn('Bonjour', 2000).then(function() {
+      console.log('chao');
+    });
+
+    console.log('Ya se despidio !');
+
+
+
+  </script>
+</body>
+</html>
