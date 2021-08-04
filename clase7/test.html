@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+
+      const curso = {
+        qty: 50,
+        subject: "Javascript",
+        actual: 7,
+      };
+      const { qty, subject, actual } = curso;
+
+      console.log(`La cantidad de alumnos es ${qty} del curso de ${subject}`);
+
+      const cursoTwo = {
+        qty: 55,
+        subject: "React",
+        actual: 5,
+      };
+
+      // Esta forma de declarar sirve cuando tenemos objetos
+      // con las mismas propiedades.
+      const { qty: qtyTwo, subject: subjectTwo, actual: actualTwo } = cursoTwo;
+
+      console.log(
+        `La cantidad de alumnos es ${qtyTwo} del curso de ${subjectTwo}`
+      );
+
+      console.log("_________________________________________________");
+
+      const colors = ["red", "green", "blue", "yellow", "Purple", "Cyan"];
+      const colors2 = ["Black", "White"];
+
+      const [c1, , c2] = colors;
+
+      console.log(c1, c2);
+
+      const arr = [...colors, ...colors2];
+
+      console.log(arr);
+
+      console.log("_________________________________________________");
+
+      const hero = ["Batman", "Aquaman"];
+      const villains = ["Joker", "Black manta"];
+      const sidekicks = ["Robin", "Aqualad"];
+
+      const characters = [...hero, ...villains, ...sidekicks];
+
+      //...rest almacena el resto de elementos que no fueron necesitados
+      const [hero1, hero2, ...rest] = characters;
+
+      console.log(rest);
+
+      console.log("_________________________________________________");
+
+      const person = {
+        firstName: "Tony",
+        lastName: "Starck",
+      };
+
+      const heroData = {
+        heroName: "Iron Man",
+        details: "Genio, millonario, Filantropo",
+      };
+
+      const heroe = {
+        ...person,
+        ...heroData,
+      };
+
+      console.log(heroe);
+
+      console.log("_________________________________________________");
+
+      const values = { valor: 1000, iva: 190, total: 1190 };
+
+      function user(params) {
+        const { valor, iva, total } = params;
+        return `hola, tu valor es ${valor}, el iva es ${iva}, el total es ${total}`;
+      }
+
+      console.log(user(values));
+
+      console.log("_________________________________________________");
+
+      const numbers = new Set([1, 2, 3, 4]);
+      const negativos = [-1, -2, -3];
+
+      numbers.add(5);
+
+      const all = [...numbers, ...negativos];
+
+      console.log(all);
+      console.log([...Array.from(numbers)].length);
+
+      console.log("_________________________________________________");
+
+      function myFn(num1, num2) {
+        return num1 + num2;
+      }
+
+      const myArrowFn = (num1, num2) => {
+        return num1 + num2;
+      };
+
+      const myArrowFnRt = (num1, num2) => num1 + num2;
+
+      function double(num) {
+        return num * 2;
+      }
+
+      const doubleArrowFn = (num) => num * 2;
+
+      console.log(myFn(2, 2));
+      console.log(myArrowFn(1, 10));
+      console.log(double(3));
+      console.log(doubleArrowFn(5));
+
+      console.log("_________________________________________________");
+
+      const obj = {
+        val: "test",
+
+        fn() {
+          console.log(this.val);
+          function inner1() {
+            console.log("inner1", this.val);
+          }
+          inner1();
+          const inner2 = () => {
+            console.log("inner2", this.val);
+          };
+          inner2();
+        },
+      };
+
+      console.log(obj.fn());
+    </script>
+  </body>
+</html>
