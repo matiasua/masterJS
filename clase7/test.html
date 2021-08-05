@@ -8,7 +8,7 @@
   </head>
   <body>
     <script>
-      "use strict";
+      // "use strict";
 
       const curso = {
         qty: 50,
@@ -126,23 +126,53 @@
 
       console.log("_________________________________________________");
 
-      const obj = {
-        val: "test",
+      // const obj = {
+      //   val: "test",
 
-        fn() {
-          console.log(this.val);
-          function inner1() {
-            console.log("inner1", this.val);
-          }
-          inner1();
-          const inner2 = () => {
-            console.log("inner2", this.val);
-          };
-          inner2();
-        },
-      };
+      //   fn() {
+      //     console.log('1', this); // obj
+      //     function inner1() {
+      //       console.log("2", this); // Fn dentro de otra fn this es global
+      //     }
+      //     const inner2 = () => {
+      //       console.log("2a", this);
+      //     };
+      //     inner1();
+      //     inner2();
+      //   },
+      // };
 
-      console.log(obj.fn());
+      // obj.fn();
+
+      const cart = {
+      _products: [],
+      _total: 0,
+      _taxes: 1.19,
+      add(producto, valor) {
+        const calculateTaxes = valor => {
+          return valor * this._taxes;
+        }
+        this._products.push(producto);
+        this._total += calculateTaxes(valor);
+      },
+      getCart() {
+        return {
+          productos: this._products,
+          total: this._total
+        }
+      }
+    }
+
+    cart.add('Chelita', 500);
+    console.log(cart.getCart());
+
+    console.log("_________________________________________________");
+
+    const colors = ['rojo', 'verde', 'azul'];
+
+    colors.forEach((color, i) => {
+      console.log({color, i});
+    });
     </script>
   </body>
 </html>
